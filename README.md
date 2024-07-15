@@ -247,3 +247,25 @@ userId:6690fd3f2e170b31264e2c2d
 checkIn:2024-07-24T00:00:00.000+00:00
 
 checkOut:2024-07-31T00:00:00.000+00:00
+
+![image](https://github.com/user-attachments/assets/9ad9875c-4cb7-4847-ba32-914c8108bf48)
+
+![image](https://github.com/user-attachments/assets/296c2264-f9a8-4faa-a4ba-3c8d5654ed6f)
+
+![image](https://github.com/user-attachments/assets/fc6b695b-10d8-4f05-a813-7a87482f6c82)
+
+![image](https://github.com/user-attachments/assets/e4bc2f41-54a0-44a4-a6a0-460b63739de9)
+
+![image](https://github.com/user-attachments/assets/55d66763-5e06-4a72-a5c2-3d48229ad569)
+
+![image](https://github.com/user-attachments/assets/5134f089-6002-47bb-96cf-329ebb261a25)
+
+![image](https://github.com/user-attachments/assets/0f13ae2c-b3e8-4828-9e16-04c9269ec9f5)
+
+![image](https://github.com/user-attachments/assets/61aa812e-a3b2-43a3-8949-ab0a04450174)
+
+![image](https://github.com/user-attachments/assets/1a44b735-27c2-46f2-bb72-ed39c4043223)
+
+![image](https://github.com/user-attachments/assets/07b898ce-fb0d-443b-b1fe-6312293046a5)
+
+![image](https://github.com/user-attachments/assets/6165c064-a50a-4929-a407-af0e2e5550f6)
