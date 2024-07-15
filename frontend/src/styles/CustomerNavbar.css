@@ -1,0 +1,44 @@
+.navbar {
+  background-color: #0f0f0f;
+  color: white;
+  /* padding: 10px 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links li {
+  margin-right: 15px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.5s ease;
+  font-size: 20px;
+}
+
+.navbar-link:hover {
+  opacity: 0.8;
+}
+
+.navbar-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}

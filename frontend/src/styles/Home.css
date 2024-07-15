@@ -1,0 +1,75 @@
+
+
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.about-us-image {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.about-us-text {
+  padding-left: 40px ;
+  max-width: 550px;
+  text-align: left;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.slogan {
+  max-width: 550px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.cta {
+  margin: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #5d1558;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #7a1a7a;
+}
+
+.book-link {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.book {
+  position: absolute;
+  bottom: 50px;  
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;  
+}

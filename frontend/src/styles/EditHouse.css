@@ -1,0 +1,47 @@
+
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5d1558; 
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  input[type="number"]  {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  input[type="file"] {
+    padding: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #5d1558; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #7d1c78; 
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  .existing-photo-img{
+    width: 200px;
+  }

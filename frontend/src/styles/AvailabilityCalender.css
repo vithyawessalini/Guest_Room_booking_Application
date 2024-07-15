@@ -1,0 +1,59 @@
+.calendar-container {
+    width: 300px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .calendar-table th,
+  .calendar-table td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .calendar-day {
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  .calendar-day.empty {
+    visibility: hidden;
+  }
+  
+  .calendar-day.booked {
+    background-color: #f44336;
+    color: white;
+    pointer-events: none; 
+  }
+  
+  .calendar-day.available {
+    background-color: green;
+    color: black;
+  }
+  
+  .selected-date {
+    margin-top: 10px;
+  }
+  
+ 
