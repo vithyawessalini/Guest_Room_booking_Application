@@ -6,6 +6,7 @@ const Room = require('../models/Room');
 // const House = require('../models/House');
 const router = express.Router();
 
+// fetch the room details of the house
 router.get('/rooms', async (req, res) => {
   try {
     const rooms = await Room.find();
@@ -15,6 +16,8 @@ router.get('/rooms', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+// fetch the room 
 router.get('/rooms/:roomId', async (req, res) => {
   try {
     const room = await Room.findById(req.params.roomId);
@@ -28,6 +31,7 @@ router.get('/rooms/:roomId', async (req, res) => {
   }
 });
 
+// get the room details 
 router.get('/rooms/:roomId/details', async (req, res) => {
   try {
     const room = await Room.findById(req.params.roomId);

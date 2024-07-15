@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
 
-// Fetch availability for a specific room
+// Route to Fetch availability for a specific room
 router.get('/rooms/:roomId/availability', async (req, res) => {
   const { roomId } = req.params;
 
   try {
-    // Fetch existing bookings for the room
+    //To Fetch existing bookings for the room
     const bookings = await Booking.find({ room: roomId });
 
     // Extract booked dates from bookings

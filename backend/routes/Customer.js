@@ -20,7 +20,7 @@ const verifyToken = (req) => {
   return jwt.verify(token, 'your_jwt_secret'); 
 };
 
-// Route to fetch all rooms available for booking
+// Route to fetch all rooms available 
 router.get('/rooms', async (req, res) => {
   try {
     const rooms = await Room.find();
@@ -31,6 +31,7 @@ router.get('/rooms', async (req, res) => {
   }
 });
 
+// To fetch the house details
 router.get('/houses', async (req, res) => {
   try {
     const houses = await House.find();
@@ -41,7 +42,7 @@ router.get('/houses', async (req, res) => {
   }
 });
 
-// Fetch rooms by house ID
+// To fetch rooms by house ID
 router.get('/houses/:houseId/rooms', async (req, res) => {
   try {
     const rooms = await Room.find({ house: req.params.houseId });
@@ -52,6 +53,7 @@ router.get('/houses/:houseId/rooms', async (req, res) => {
   }
 });
 
+// Route to fetch the image of house
 router.get('/houses/:id/image', async (req, res) => {
   try {
     const house = await House.findById(req.params.id);
@@ -67,7 +69,7 @@ router.get('/houses/:id/image', async (req, res) => {
     res.status(404).send('Image not found');
   }
 });
-
+// Route to get the booking of the user(customer)
 router.get('/bookings', async (req, res) => {
   try {
     const decoded = verifyToken(req);

@@ -19,14 +19,14 @@ const verifyToken = (req) => {
     throw new Error('No token found');
   }
 
-  return jwt.verify(token, 'your_jwt_secret'); // Replace 'your_jwt_secret' with your actual JWT secret
+  return jwt.verify(token, 'your_jwt_secret'); 
 };
 
-// Fetch house details by ID
+//To fetch house details by ID
 router.get('/house/:id', async (req, res) => {
   try {
     const houseId = req.params.id;
-    const house = await House.findById(houseId).populate('owner', 'name'); // Assuming 'owner' is populated with 'name'
+    const house = await House.findById(houseId).populate('owner', 'name'); // 'owner' is populated with 'name'
     if (!house) {
       return res.status(404).json({ error: 'House not found' });
     }
@@ -37,7 +37,7 @@ router.get('/house/:id', async (req, res) => {
   }
 });
 
-// Fetch rooms by house ID
+//To fetch rooms by house ID
 router.get('/house/:id/rooms', async (req, res) => {
   try {
     const houseId = req.params.id;
@@ -49,8 +49,7 @@ router.get('/house/:id/rooms', async (req, res) => {
   }
 });
 
-// Update house details
-// PUT route to update house details and photo
+//To update the house details
 router.put('/house/:id', upload.single('photo'), async (req, res) => {
   const { id } = req.params;
   const { name, address } = req.body;
@@ -80,7 +79,7 @@ router.put('/house/:id', upload.single('photo'), async (req, res) => {
   }
 });
 
-// Delete house
+//Route to Delete house
 router.delete('/house/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -110,7 +109,7 @@ router.delete('/house/:id', async (req, res) => {
 });
 
 
-// Backend route to add a room
+// route to add a room
 router.post('/house/:id/add-room', upload.array('images', 5), [
   check('name').not().isEmpty().withMessage('Name is required'),
   check('floorSize').isNumeric().withMessage('Floor size must be a number'),
@@ -134,7 +133,7 @@ router.post('/house/:id/add-room', upload.array('images', 5), [
     if (!house) {
       return res.status(404).json({ error: 'House not found' });
     }
-
+    // Create new room
     const newRoom = new Room({
       name,
       floorSize,
@@ -159,7 +158,7 @@ router.post('/house/:id/add-room', upload.array('images', 5), [
   }
 });
 
-// Get room photos
+// Route to get room photos 
 router.get('/room-photos/:roomId/:index', async (req, res) => {
   const { roomId, index } = req.params;
   try {
@@ -182,7 +181,6 @@ router.get('/room-photos/:roomId/:index', async (req, res) => {
 });
 
 // Update a room
-// PUT route to update a room
 router.put('/room/:roomId', upload.array('photos', 5), async (req, res) => {
   const { roomId } = req.params;
   const { name, floorSize, numberOfBeds, amenities, rent, minBookingDays, maxBookingDays } = req.body;
@@ -218,9 +216,7 @@ router.put('/room/:roomId', upload.array('photos', 5), async (req, res) => {
   }
 });
 
-
-  
-// Backend route to delete a room
+// Route to delete a room
 router.delete('/room/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -238,6 +234,8 @@ router.delete('/room/:id', async (req, res) => {
     res.status(500).json({ error: 'Failed to delete room. Please try again.' });
   }
 });
+
+// Route to fetch the bookings of particular room
 router.get('/room/:roomId/bookings', async (req, res) => {
   try {
     const { roomId } = req.params;
@@ -254,6 +252,7 @@ router.get('/room/:roomId/bookings', async (req, res) => {
   }
 });
 
+// Create a house
 router.post('/add-house', upload.single('photo'), async (req, res) => {
   const { name, address } = req.body;
   const photo = req.file;
@@ -285,6 +284,7 @@ router.post('/add-house', upload.single('photo'), async (req, res) => {
   }
 });
 
+// fetch house as per the owner
 router.get('/houses', async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
@@ -299,7 +299,7 @@ router.get('/houses', async (req, res) => {
   }
 });
 
-
+// fetch photo of the houses
 router.get('/house-photo/:id', async (req, res) => {
   try {
     const house = await House.findById(req.params.id);
@@ -315,6 +315,7 @@ router.get('/house-photo/:id', async (req, res) => {
   }
 });
 
+// fetch the rooms for the respective house
 router.get('/house/:houseId/rooms', async (req, res) => {
   try {
     const decoded = verifyToken(req);

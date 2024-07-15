@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// Register route
+// Route to Register 
 router.post('/register', async (req, res) => {
   const { userType, name, email, phoneNumber, address, dob, password } = req.body;
 
@@ -35,6 +35,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+//Route to login
 router.post('/login', async (req, res) => {
   const { email, password, userType } = req.body;
 
@@ -70,20 +71,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-
-router.get('/user/:id', async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-    res.json(user);
-  } catch (error) {
-    console.error('Error fetching user:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
-  
+//route to get the details of user  
 router.get('/getProfile', async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1];

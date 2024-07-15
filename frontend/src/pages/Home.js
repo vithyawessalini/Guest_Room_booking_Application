@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import '../styles/Home.css'
+import Footer from '../components/Footer';
 const Home = () => {
   const rooms = [
     {
@@ -56,10 +57,7 @@ const Home = () => {
         <p>Your comfort is our priority. Discover the perfect place to stay, verified by trusted owners worldwide.</p>
       </div>
       </div>
-      <div className="cta">
-        {/* <Link to="/about" className="cta-button">Learn More About Us</Link> */}
-        
-      </div>
+      <Footer/>
     </div>
   );
 };

@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
 
-// POST /api/rooms/:roomId/book
-// Book a room
+// /api/rooms/:roomId/book
+//to create a new Booking in a room
 router.post('/rooms/:roomId/book', async (req, res) => {
   try {
     const { checkIn, checkOut, userId } = req.body;
