@@ -11,7 +11,11 @@ The Guest Room Booking application allows house owners to list their properties 
 
 **Database**: MongoDB Atlas
 
-**Others**: CSS for styling, React Router for navigation
+**Other Technologies**:
+   - CSS for styling
+  
+   - React Router for navigation
+
 
 ## Modules
  - Customer Module 
