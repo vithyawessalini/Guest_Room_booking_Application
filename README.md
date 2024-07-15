@@ -14,9 +14,9 @@ The Guest Room Booking application allows house owners to list their properties 
 **Others**: CSS for styling, React Router for navigation
 
 ## Modules
- -Customer Module 
+ - Customer Module 
  
- -House Owner Module 
+ - House Owner Module 
 
 ## Features
 
