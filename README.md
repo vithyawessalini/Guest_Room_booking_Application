@@ -6,12 +6,16 @@ The Guest Room Booking application allows house owners to list their properties 
 
 ## TechStack
 **Frontend**: React
+
 **Backend**: Node.js (Express)
+
 **Database**: MongoDB Atlas
+
 **Others**: CSS for styling, React Router for navigation
 
 ## Modules
  -Customer Module 
+ 
  -House Owner Module 
 
 ## Features
