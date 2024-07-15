@@ -10,6 +10,8 @@ const CustomerProfile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+
+  // fetch the user details
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {

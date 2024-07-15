@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 const CustomerNavbar = () => {
   const navigate = useNavigate();
+  //after logout navigate to home page
   const handleLogout = () => {
     localStorage.removeItem('token'); 
     navigate('/'); 

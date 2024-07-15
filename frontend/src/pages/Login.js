@@ -30,6 +30,7 @@ const LoginForm = () => {
 
       localStorage.setItem('token', response.data.token);
 
+      // according to the usertype navigate
       if (response.data.userType === 'owner') {
         navigate('/owner/dashboard');
       } else if (response.data.userType === 'customer') {

@@ -64,6 +64,7 @@ const BookingForm = ({ room, closeModal }) => {
     }
   };
 
+  // check the booking range of days and store in the booking db
   const handleBooking = async () => {
     try {
       if (!checkIn || !checkOut) {
@@ -112,6 +113,7 @@ const BookingForm = ({ room, closeModal }) => {
     }
   };
 
+  // check if the date is booked or not
   const isDateBooked = (date) => {
     return availability.some(booking => {
       const bookingStartDate = new Date(booking.checkIn);
@@ -142,7 +144,7 @@ const BookingForm = ({ room, closeModal }) => {
           value={checkIn}
           onChange={(e) => setCheckIn(e.target.value)}
           style={getDateInputStyle(checkIn)}
-          min={new Date().toISOString().split('T')[0]} 
+          min={new Date().toISOString().split('T')[0]}  // disable the dates before today date
         />
       </div>
       <div>
@@ -152,7 +154,7 @@ const BookingForm = ({ room, closeModal }) => {
           value={checkOut}
           onChange={(e) => setCheckOut(e.target.value)}
           style={getDateInputStyle(checkOut)}
-          min={checkoutMinDate}
+          min={checkoutMinDate}  // disable the dates before the checkin date
           />
       </div>
       <br />

@@ -12,6 +12,7 @@ const HouseDetails = () => {
     fetchRoomsByHouse();
   }, []);
 
+  //fetch the details of rooms which respect to that house
   const fetchRoomsByHouse = async () => {
     try {
       const response = await axios.get(`${ BASE_URL }/api/customer/houses/${houseId}/rooms`);

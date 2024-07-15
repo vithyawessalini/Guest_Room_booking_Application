@@ -18,6 +18,7 @@ const OwnerDashboard = () => {
   const [currentHouse, setCurrentHouse] = useState(null);
   const navigate = useNavigate();
 
+  // fetch houses
   const fetchHouses = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -79,6 +80,7 @@ const OwnerDashboard = () => {
     setCurrentHouse(null);
   };
 
+  // if delete the house then delete their room as well as
   const handleDelete = async (houseId) => {
     try {
       const token = localStorage.getItem('token');

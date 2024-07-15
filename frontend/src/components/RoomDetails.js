@@ -17,6 +17,7 @@ const RoomDetails = ({ userId }) => {
     fetchRoomDetails();
   }, []);
 
+  // fetch the room details
   const fetchRoomDetails = async () => {
     try {
       const response = await axios.get(`${ BASE_URL }/api/rooms/${id}`);

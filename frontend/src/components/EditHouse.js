@@ -13,6 +13,7 @@ const EditHouseForm = ({ house, closeModal, reloadHouses }) => {
   const [error, setError] = useState(null);
   const [existingPhoto, setExistingPhoto] = useState(null);
 
+  // fetch the house photo 
   useEffect(() => {
     const fetchHousePhoto = async () => {
       try {
@@ -28,6 +29,7 @@ const EditHouseForm = ({ house, closeModal, reloadHouses }) => {
     fetchHousePhoto();
   }, [house._id]);
 
+  // change the photo  if the photo is given to update
   const handleChange = (e) => {
     if (e.target.name === 'photo') {
       setFormData({
@@ -42,6 +44,7 @@ const EditHouseForm = ({ house, closeModal, reloadHouses }) => {
     }
   };
 
+  // update the changes
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

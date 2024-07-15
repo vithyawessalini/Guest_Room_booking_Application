@@ -17,6 +17,7 @@ const AddHouseForm = ({ closeModal, reloadHouses }) => {
     setPhoto(e.target.files[0]);
   };
 
+  //add a new house 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

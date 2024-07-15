@@ -16,6 +16,7 @@ const EditRoomForm = ({ roomId, reloadHouseDetails, closeModal }) => {
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(true);  
 
+  // fetch the details of room
   useEffect(() => {
     const fetchRoomDetails = async () => {
       try {
@@ -51,6 +52,7 @@ const EditRoomForm = ({ roomId, reloadHouseDetails, closeModal }) => {
     setPhotoFile(e.target.files[0]);
   };
 
+  // update the changes affter editing
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

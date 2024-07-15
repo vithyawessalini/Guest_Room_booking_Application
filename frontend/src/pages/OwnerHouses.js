@@ -3,6 +3,8 @@ import axios from 'axios';
 import { BASE_URL } from '../config';
 const OwnerHouses = () => {
   const [houses, setHouses] = useState([]);
+
+  // fetch the house details
   useEffect(() => {
     const fetchHouses = async () => {
       try {

@@ -22,6 +22,7 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  //  validate the fields whether all fields are filled or not
   const validateForm = () => {
     const newErrors = {};
     Object.keys(formData).forEach((field) => {
@@ -32,6 +33,7 @@ const Register = () => {
     return newErrors;
   };
 
+  // add a user 
   const handleRegistration = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();

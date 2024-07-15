@@ -5,6 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 const OwnerNavbar = () => {
   const navigate = useNavigate();
 
+  // logout after clicking the logout and the token will be removed
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/');

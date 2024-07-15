@@ -9,6 +9,7 @@ const CustomerBookingPage = () => {
   const [bookings, setBookings] = useState([]);
   const [error, setError] = useState('');
 
+  // fetch the booking details of the customer
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem('token');

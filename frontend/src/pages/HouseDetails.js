@@ -20,6 +20,7 @@ const HouseDetails = () => {
   const [bookings, setBookings] = useState([]);
   const [selectedRoomId, setSelectedRoomId] = useState(null);
 
+  // get the house details
   useEffect(() => {
     const fetchHouseDetails = async () => {
       try {
@@ -51,34 +52,6 @@ const HouseDetails = () => {
 
     fetchHouseDetails();
   }, [id]);
-
-  const openEditModal = (room) => {
-    setEditRoomData(room);
-    setIsEditModalOpen(true);
-    setRoomImages(room.photos || []);
-  };
-
-  const openBookingsModal = async (roomId) => {
-    try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        throw new Error('No token found');
-      }
-
-      const response = await axios.get(`${ BASE_URL }/api/owner/room/${roomId}/bookings`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      setBookings(response.data);
-      setSelectedRoomId(roomId);
-      setIsBookingsModalOpen(true);  
-    } catch (error) {
-      console.error('Error fetching bookings for room:', error);
-      setError(error.message || 'Error fetching bookings for room');
-    }
-  };
 
   const closeModal = () => {
     setIsEditModalOpen(false);
@@ -134,6 +107,7 @@ const HouseDetails = () => {
     }
   };
 
+  // update the room after edited 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -173,6 +147,7 @@ const HouseDetails = () => {
     }
   };
 
+  // get the details of room
   const fetchBookingsForRoom = async (roomId) => {
     try {
       const token = localStorage.getItem('token');

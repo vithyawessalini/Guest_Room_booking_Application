@@ -10,15 +10,17 @@ const AvailabilityCalendar = ({ room, updateTrigger }) => {
   useEffect(() => {
     fetchAvailability();
   }, [room, currentMonth, currentYear, updateTrigger]); 
+
+  // fetch the availability data for the room
   const fetchAvailability = async () => {
     try {
       const response = await axios.get(`${ BASE_URL }/api/rooms/${room._id}/availability`);
-      setAvailability(response.data);
+      setAvailability(response.data);//set the availability data
     } catch (error) {
       console.error('Error fetching availability:', error);
     }
   };
-
+// Function to check if a specific date is booked in a particular room
   const isDateBooked = (date) => {
     return availability.some(booking => {
       const bookingStartDate = new Date(booking.checkIn);
@@ -33,6 +35,7 @@ const AvailabilityCalendar = ({ room, updateTrigger }) => {
     setSelectedDate(dateString);
   };
 
+  // generate the calender for the current month and year
   const generateCalendar = () => {
     const calendarRows = [];
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
@@ -69,14 +72,14 @@ const AvailabilityCalendar = ({ room, updateTrigger }) => {
           {day}
         </td>
       );
-
+     // check whether the current day is the last day of the week or the last day of the month
       if (date.getDay() === 6 || day === daysInMonth) {
         const remainingDays = 7 - weekRow.length;
         for (let i = 0; i < remainingDays; i++) {
           weekRow.push(<td key={`empty-${i}`} className="calendar-day empty"></td>);
         }
         calendarRows.push(<tr key={`row-${day}`}>{weekRow}</tr>);
-        weekRow = [];
+        weekRow = []; // reset the week row for next week
       }
 
       day++;
@@ -101,11 +104,11 @@ const AvailabilityCalendar = ({ room, updateTrigger }) => {
           </thead>
           <tbody>{calendarRows}</tbody>
         </table>
-        {selectedDate && (
+        {/* {selectedDate && (
           <div className="selected-date">
             Selected Date: {new Date(selectedDate).toLocaleDateString()}
           </div>
-        )}
+        )} */}
       </div>
     );
   };
