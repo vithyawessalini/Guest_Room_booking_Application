@@ -75,7 +75,7 @@ The Guest Room Booking application allows house owners to list their properties 
    cd backend
 2. **Install the dependencies:**
 
-   npm install express 
+   npm install
 3. **Start the backend server**:
    
    node Server.js
