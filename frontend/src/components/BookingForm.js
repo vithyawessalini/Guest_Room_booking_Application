@@ -27,7 +27,7 @@ const BookingForm = ({ room, closeModal }) => {
       setCheckoutMinDate('');
     }
   }, [checkIn]);
-
+// fetch the details of room
   const fetchRoomDetails = async () => {
     try {
       const response = await axios.get(`${ BASE_URL }/api/rooms/${room._id}/details`);
@@ -38,6 +38,7 @@ const BookingForm = ({ room, closeModal }) => {
     }
   };
 
+  // fetch and check the dates for booking
   const fetchAvailability = async () => {
     try {
       const response = await axios.get(`${ BASE_URL }/api/rooms/${room._id}/availability`);

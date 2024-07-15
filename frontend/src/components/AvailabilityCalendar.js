@@ -6,7 +6,7 @@ const AvailabilityCalendar = ({ room, updateTrigger }) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
+// fetch the details of booking to check availability
   useEffect(() => {
     fetchAvailability();
   }, [room, currentMonth, currentYear, updateTrigger]); 
